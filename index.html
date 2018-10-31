@@ -4,15 +4,437 @@
 <meta charset="utf-8">
 <title>Flat Rate Towing Flint</title>
 <style>
+	html, body{
+    	height: 100%;
+	}
+	html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+	
 	body { 
 		font-family: Gibson Light, sans-serif;
 		color: #333333;
-		font-size: 2em;
+	}
+	header {
+		height: 1em;
+		width: 100%;
+		background: white;
+		font-size: 4em;
+		border-top: 45px solid #215282;
+		padding: .25em 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	#title {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding-left: 20px;
+	}
+	#title img {
+		height: 100%;
+		margin-right: .25em;
+	}
+	#title h1 {
+		font-family: 'TitlingGothicFB Comp medium', sans-serif;
+		font-size: .8em;
+		color: #292b2c;
+		text-transform: uppercase;
+		margin-right: .25em;
+		margin-top: .2em;
+	}
+	#title h2 {
+		font-size: .5em;
+		color: #7d7d7d;
+	}
+	#callnav {
+		font-family: Gibson, sans-serif;
+		font-weight: 600;
+		font-size: .43em;
+		display: flex;
+		align-items: center;
+		padding-right: 20px;
+	}
+	#callnav h3 {
+		color: #4482c3;
+		margin: 0 30px 0 10px;
+	}
+	.button {
+		background-color: #4482c3;
+		border: none;
+		color: white;
+		padding: 20px 32px;
+		text-decoration: none;
+		border-radius: 10px;
+	}
+	#phoneicon {
+		height: 28px;
+	}
+	.blue {
+		background: #387cc0;
+		color: white;
+	}
+	.blue a {
+		color: white!important;
+		text-decoration-color: #fcb116!important;
+	}
+	#top {
+		display: flex;
+		min-height: 75%;
+	}
+	.left {
+		padding: 20px;
+		width: 50%;
+	}
+	#top .left {
+		display:flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		padding: 4em 10em 4em 4em;
+	}
+	#top h1 {
+		font-family: 'TitlingGothicFB Comp medium', sans-serif;
+		font-size: 6em;
+		text-transform: uppercase;
+		line-height: 1em;
+	}
+	#top h2 {
+		font-size: 2.3em;
+		margin-top: .5em;	
+	}
+	#top a, #services a, #certified a, #repair a, footer a {
+		margin-top: 1em;
+		color: #333;
+		font-family: Gibson, sans-serif;
+		font-weight: 600;
+		font-size: 2.5em;
+		text-decoration: underline;
+	}
+	#top .right {
+		width: 70%;
+		background-image: url(promo.jpg);
+		background-size: cover;
+		background-position: left;
+	}
+	#reviews {
+		display: flex;
+		font-family: Gibson Light, sans-serif;
+		padding: 4em;
+	}
+	#reviews .left, #reviews .right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+	}
+	.reviewer {
+		font-size: 1.67em;
+		margin-top: 3px;
+		margin-bottom: 20px;
+	}
+	#reviewsub {
+		margin-bottom: 28px;
+	}
+	p {
+		font-family: Gibson Light, sans-serif;
+		font-size: 2.6em;
+	}
+	h1 {
+		font-family: 'TitlingGothicFB Comp medium', sans-serif;
+		font-size: 4.2em;
+		text-transform: uppercase;
+		line-height: 1em;
+		margin-bottom: 10px;
+	}
+	#stars img {
+		width: 40px;
+		margin-left: 5px;
+		margin-bottom: 13px;
+	}
+	.right {
+		width: 50%;
+		padding: 20px;
+		order:1;
+	}
+	.btn {
+		background-color: #a0b7cb;
+		border: none;
+		color: white;
+		padding: 10px 32px;
+		text-decoration: none;
+		border-radius: 25px;
+		font-size: 1.4em;
+		font-family: Gibson, sans-serif;
+		letter-spacing: .1em;
+		font-weight: 600;
+		margin-top: 10px;
+	}
+	.btn img {
+		height: 12px;
+		margin-left: 5px;
+	}
+	#gallery {
+		margin-top: -40px;
+		margin-bottom: -80px;
+	}
+	#gallery img {
+		width: 100%;
+	}
+	.light {
+		background-color: #f3f5f6;
+	}
+	#services {
+		padding: 50px 0;
+		display: flex;
+	}
+	#services .right {
+		text-align: center;
+		padding-right: 90px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	#services .left {
+		width: 80%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	#services .right p, #certified .left p, #repair .right p {
+		padding: 10px 0 20px 0;
+	}
+	#services a, #certified a, #repair a, footer a {
+		text-decoration-color: #397dc1;
+	}
+	.icon {
+		background-color: white;
+		border-radius: 11em;
+		border: solid 23px white;
+		margin: 20px;
+		width: 11em;
+		height: 11em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 1em;
+		font-size: .9em;
+		line-height: 2.5em;
+		box-shadow: 20px 20px 63px -24px rgba(42,41,84,0.34);
+	}
+	.icon img {
+		width: 7em;
+		margin-bottom: 5px;
+		margin-top: -18px;
+	}
+	.icon p {
+		margin-bottom: 5px;
+	}
+	#certified {
+		display: flex;
+		padding: 100px 50px;
+	}
+	#certified .left {
+		text-align: center;
+	}
+	#certified img {
+		width: 90px;
+		margin-bottom: 15px;
+	}
+	#certified .right {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	#repair {
+		display: flex;
+	}
+	#repair .left {
+		width: 60%;
+		background-image: url(shop.jpg);
+		background-size: cover;
+		background-position: right;
+	}
+	#repair .right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 100px 30px 100px 30px;
+	}
+	#repair .right img {
+		width: 100px;
+		margin-bottom: 10px;
+	}
+	footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 70px;
+	}
+	footer #phonenumber {
+		margin-top: 0;
+		color: #4482c3;
+	}
+	#address {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	#address p {
+		border-right: solid 1px #333;
+		margin: 20px;
+		padding-right: 50px;
+		text-align: right;
+	}
+	#address a {
+		font-family: Gibson Light, sans-serif;
+		font-weight: 300;
+		margin-left: 30px;
+		margin-top: 0;
+		margin-right: 150px;
+	}
+	#address img {
+		width: 40px;
+	}
+	footer h2 {
+		color: #333;
+		font-family: Gibson, sans-serif;
+		font-weight: 600;
+		font-size: 2.5em;
+	}
+	.socialmedia img {
+		width: 70px;
+		margin-top: 10px;
+		margin-bottom: 30px;
+	}
+	#copyright {
+		font-size: 1.9em;
+		margin: 15px 0 50px 0;
 	}
 </style>
 </head>
 
 <body>
-	<img src="towing-comingsoon.gif" width="720" height="720">
+	<header>
+		<div id="title">
+			<img src="logo.gif">
+			<h1>Flat Rate Towing &amp; Service</h1>
+			<h2>15+ years of experience</h2>
+		</div>
+		<div id="callnav">
+			<img id="phoneicon" src="phone.png">
+			<h3>(810) 397-8939</h3>
+			<a href="tel:(810) 397-8939" class="button">Call Now</a>
+		</div>
+	</header>
+	<section id="top" class="blue">
+		<div class="left">
+			<h1>Great Towing<br> Great Prices</h1>
+			<h2>Our 24/7 towing services are available whenever you are in need of assistance. We are a family-owned and Christian business.</h2>
+			<a href="tel:(810) 397-8939"><h3>Call Now (810) 397-8939</h3></a>
+		</div>
+		<div class="right"></div>
+	</section>
+	<section id="reviews">
+		<div class="left">
+			<p id="stars"><img src="star.png"><img src="star.png"><img src="star.png"><img src="star.png"><img src="star.png"></p>
+			<h1>5 Star Rated Towing</h1>
+			<p id="reviewsub">Customer satisfaction is our #1 priority.</p>
+		</div>
+		<div class="right">
+			<p>“Very honest people who actually care”</p>
+			<p class="reviewer">- Tyler G., Flint, MI</p>
+
+			<p>“Beyond good customer service”</p>
+			<p class="reviewer">- Rochelle D., Flint, MI</p>
+
+			<p>“You guys saved me so much time, money and energy today. Can't thank you enough”</p>
+			<p class="reviewer">- Nicole S., Flint, MI</p>
+
+			<a class="btn" href="https://www.facebook.com/pg/Flat-Rate-Towing-Service-183640249024737/reviews/">View More <img src="arrow.png"></a>
+		</div>
+	</section>
+	
+	<section id="gallery">
+		<img src="filmstrip.png">
+	</section>
+
+	<section id="services" class="light">
+		<div class="right">
+			<h1>All your towing needs <br>at one low rate</h1>
+			<p>Vehicle trouble? Our 24/7 service makes it as easy as possible for you to get to where you need to be no matter what the problem.</p>
+			<a href="tel:(810) 397-8939">Call Now (810) 397-8939</a>
+		</div>
+		<div class="left">
+			<div class="icon"><img src="1.png"><p>24/7 Towing</p></div>
+			<div class="icon"><img src="2.png"><p>Tire Changes</p></div>
+			<div class="icon"><img src="3.png"><p>Jump<br>Starts</p></div>
+			<div class="icon"><img src="4.png"><p>Lockout Service</p></div>
+			<div class="icon"><img src="5.png"><p>Winching Service</p></div>
+			<div class="icon"><img src="6.png"><p>Fuel Delivery</p></div>
+		</div>
+	</section>
+	<section id="certified">
+		<div class="left">
+			<img src="certified.png">
+			<h1>High Quality Service</h1>
+			<p>With top of the line equipment and over 15 years experience, Flat Rate Towing has been serving the Flint area for over 10 years.</p>
+			<a href="tel:(810) 397-8939">Call Now (810) 397-8939</a>
+		</div>
+		<div class="right">
+			<div class="icon"><img src="7.png"><p>Licensed &amp; Insured</p></div>
+			<div class="icon"><img src="8.png"><p>Low <br>Rates</p></div>
+			<div class="icon"><img src="9.png"><p>Top-notch Trucks</p></div>
+		</div>
+	</section>
+	<section id="repair" class="blue">
+		<div class="right">
+			<img src="tools.png">
+			<h1>Full Auto Repair</h1>
+			<p>If your vehicle is in need of repair, service, or maintenance, we’ve got you covered with our experienced mechanics.</p>
+			<a href="tel:(810) 397-8939">Call Now (810) 397-8939</a>
+		</div>
+		<div class="left"></div>
+	</section>
+	<footer>
+		<h1>Call Now</h1>
+		<a id="phonenumber" href="tel:(810) 397-8939">(810) 397-8939</a>
+		<div id="address">
+			<p>4011 N Dort Hwy<br>
+			Flint, Michigan 48506</p>
+			<a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=4011+N+Dort+Hwy+Flint%2C+Michigan+48506">Directions <img src="arrow2.png"></a>
+		</div>
+		<h2>Follow Us</h2>
+		<div class="socialmedia">
+			<a href="https://www.facebook.com/pg/Flat-Rate-Towing-Service-183640249024737/"><img src="facebook.png"></a>
+			<a href="https://www.twitter.com/flatratetowing"><img src="twitter.png"></a>
+		</div>
+		<hr width="90%">
+		<p id="copyright">&copy; 2018 Flat Rate Towing. All rights reserved.</p>
+	</footer>
 </body>
 </html>
