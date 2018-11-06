@@ -79,13 +79,17 @@ time, mark, audio, video {
 		#services .right {
 			margin: 50px 0;
 		}
-		#certified .left {
+		#certified .left, #reviews .left, #reviews .right {
 			width: 100%!important;
 		}
-		#certified .left p {
+		#certified .left p, #reviews .left p, #reviews .right p {
 			padding: 0 20px!important;
 		}
-		#reviews .left, #reviews .right, #services .left, #services .right, #repair .right{
+		#certified .right {
+			padding: 0!important;
+			flex-wrap: wrap;
+		}
+		#services .left, #services .right, #repair .right{
 			padding: 0!important;
 			width: 100%!important;
 		}
@@ -117,7 +121,60 @@ time, mark, audio, video {
 	}
 	@media only screen and (max-width : 660px) {
 		body {
-			font-size: 2em!important;
+			font-size: .8em!important;
+		}
+		header {
+			border-top: 70px solid #215282!important;
+		}
+		#title img {
+			height: 50%!important;
+		}
+		#title h1 {
+			font-size: .7em!important;
+		}
+		.icon {
+			font-size: .8em!important;
+		}
+		.button {
+			display: none;
+		}
+		#mobilecta {
+			display: flex!important;
+			position: fixed;
+			z-index: 99;
+			top: 0;
+			width: 100%;
+			background: #215282;
+			color: white;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+			height: 70px
+		}
+		#mobilecta img {
+			width: 30px;
+			height: 30px;
+			padding: 0 5px 0 20px;
+		}
+		#mobilecta h2 {
+			font-family: 'Gibson-Light';
+			font-weight: normal;
+			font-style: normal;
+			font-size: 1.9em;
+			display: flex;
+			align-items: center;
+			padding: 0!important;
+			margin: 0!important;
+		}
+		#mobilecta h1 {
+			font-family: 'Gibson-Semibold';
+			font-weight: normal;
+			font-style: normal;
+			font-size: 1.9em;
+			display: flex;
+			align-items: center;
+			padding: 0!important;
+			margin: 0!important;
 		}
 	}
 	body { 
@@ -444,6 +501,9 @@ time, mark, audio, video {
 		font-size: 1.9em;
 		margin: 15px 0 50px 0;
 	}
+	#mobilecta {
+		display: none;
+	}
 </style>
 </head>
 
@@ -545,5 +605,12 @@ time, mark, audio, video {
 		<hr width="90%">
 		<p id="copyright">&copy; 2018 Flat Rate Towing. All rights reserved.</p>
 	</footer>
+	<a href="tel:(810) 397-8939">
+	<section id="mobilecta">
+		<h2>Tap to Call</h2>
+		<img id="phoneicon2" src="phone2.png">
+		<h1>(810) 397-8939</h1>
+	</section>
+	</a>
 </body>
 </html>
