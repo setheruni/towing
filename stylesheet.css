@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Gibson-Light';
+    src: url('Gibson-Light.eot');
+    src: url('Gibson-Light.eot?#iefix') format('embedded-opentype'),
+        url('Gibson-Light.woff2') format('woff2'),
+        url('Gibson-Light.woff') format('woff'),
+        url('Gibson-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TitlingGothicFBComp-Standard';
+    src: url('TitlingGothicFBComp-Standard.eot');
+    src: url('TitlingGothicFBComp-Standard.eot?#iefix') format('embedded-opentype'),
+        url('TitlingGothicFBComp-Standard.woff2') format('woff2'),
+        url('TitlingGothicFBComp-Standard.woff') format('woff'),
+        url('TitlingGothicFBComp-Standard.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gibson-SemiBold';
+    src: url('Gibson-SemiBold.eot');
+    src: url('Gibson-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Gibson-SemiBold.woff2') format('woff2'),
+        url('Gibson-SemiBold.woff') format('woff'),
+        url('Gibson-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
