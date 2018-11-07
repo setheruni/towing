@@ -42,6 +42,9 @@ time, mark, audio, video {
 		body {
 			font-size: .7em;
 		}
+		#title h1 {
+			margin-top: .4em!important;
+		}
 	}
 	@media only screen and (max-width : 1020px) {
 		body {
@@ -71,6 +74,7 @@ time, mark, audio, video {
 			width: 100%!important;
 			padding-right: 0!important;
 			padding-left: 0!important;
+			display: none;
 		}
 		#services {
 			flex-direction: column-reverse;
@@ -81,13 +85,11 @@ time, mark, audio, video {
 		}
 		#certified .left, #reviews .left, #reviews .right {
 			width: 100%!important;
-		}
-		#certified .left p, #reviews .left p, #reviews .right p {
-			padding: 0 20px!important;
+			padding: 0!important;
 		}
 		#certified .right {
+			width: 100%!important;
 			padding: 0!important;
-			
 		}
 		#services .left, #services .right, #repair .right{
 			padding: 0!important;
@@ -122,6 +124,7 @@ time, mark, audio, video {
 	@media only screen and (max-width : 660px) {
 		body {
 			font-size: .75em!important;
+			width: 100%!important;
 		}
 		header {
 			border-top: 70px solid #215282!important;
@@ -178,6 +181,16 @@ time, mark, audio, video {
 			align-items: center;
 			padding: 0!important;
 			margin: 0!important;
+		}
+		#certified .right {
+			margin-top: 50px;
+			flex-wrap: wrap;
+		}
+		#reviews .right {
+			margin-bottom: 50px;
+		}
+		#top .left {
+			padding: 40px 20px!important;
 		}
 	}
 	body { 
@@ -339,7 +352,7 @@ time, mark, audio, video {
 	.right {
 		width: 50%;
 		padding: 20px;
-		order:1;
+		order: 1;
 	}
 	.btn {
 		background-color: #a0b7cb;
@@ -386,7 +399,7 @@ time, mark, audio, video {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	#services .right p, #certified .left p, #repair .right p {
+	#services .right p, #certified .left p {
 		padding: 10px 0 20px 0;
 	}
 	#services a, #certified a, #repair a, footer a {
@@ -551,7 +564,6 @@ time, mark, audio, video {
 			<a class="btn" href="https://www.facebook.com/pg/Flat-Rate-Towing-Service-183640249024737/reviews/">View More <img src="arrow.png"></a>
 		</div>
 	</section>
-	
 	<section id="gallery">
 		<img src="filmstrip.png">
 	</section>
